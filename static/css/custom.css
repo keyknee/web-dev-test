@@ -1,0 +1,24 @@
+
+.item-list {
+    padding: 20px;
+}
+
+.items {
+    width: 18em;
+    margin: 5px;
+}
+
+.navbar-title {
+    color: #FFF;
+}
+
+.avg-rating-label {
+    font-size:85%;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+img.card-img-top {
+    height: 160px;
+    width: 160px;
+}
