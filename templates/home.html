@@ -5,13 +5,16 @@
 
 {% block body %}
 
-<nav class="navbar navbar-light bg-secondary">
+<nav class="navbar">
   <div class="container-fluid">
-    <h3 class="navbar-title">Rate Me</h3>
+    <p class='navbar-title'>Rate Me </p>
     <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="userDropDown" data-bs-toggle="dropdown" aria-expanded="false">
+      <a class="account-icon dropdown-toggle" role="button" id="userDropDown" data-bs-toggle="dropdown" aria-expanded="false">
         <img src="{{url_for('static', filename='png/account-icon.png') }}">
-      </button>
+      </a>
+      <!-- <button class="btn btn-secondary dropdown-toggle" type="button" id="userDropDown" data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="{{url_for('static', filename='png/account-icon.png') }}">
+      </button>-->
       <ul class="dropdown-menu" aria-labelledby="userDropDown">
         {% for user in users %}
         <!-- href here should trigger a function to change the active user-->
@@ -19,19 +22,18 @@
         {% endfor %}
       </ul> 
       <!--form of some sort to create new user: text field and button that executes init on User class -->
-      <a class="btn btn-dark" data-bs-toggle="collapse" href="#createUserCollapse" role="button">Create New User</a>
+      <!-- <a class="btn btn-dark" data-bs-toggle="collapse" href="#createUserCollapse" role="button">Create New User</a>
       <div class="collapse" id="createUserCollapse">
         <div class="card card-body">
-          <!-- Form box to enter name and button that executes create user function should go here-->
           <form>
             <p><label for="username">username:</label><input type="text" id="username" name="username"><button class="btn-dark" type="button" onclick="createUser()"><img src="{{url_for('static', filename='png/arrow-icon.png')}}"></button></p>
           </form>
         </div>
-      </div>
+      </div> -->
     </div>  
   </div>
 </nav>
-<div class="container item-list">
+<div class="item-list">
   <div class="row row-cols-2">
     {% for item in items %}
     <div class="card items">
@@ -50,6 +52,6 @@
     </div>
     {% endfor %}  
   </div>
-  <button type="button" onclick="">Create New Item</button>
+  <!-- <button type="button" onclick="">Create New Item</button> -->
 </div>
 {% endblock %}

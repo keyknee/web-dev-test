@@ -1,6 +1,11 @@
-
+.account-icon {
+    margin-right: 30px;
+    margin-top: 23px;
+    margin-bottom: 22px;
+}
 .item-list {
     padding: 20px;
+    background-color: #DDDDDD;
 }
 
 .items {
@@ -8,8 +13,16 @@
     margin: 5px;
 }
 
-.navbar-title {
-    color: #FFF;
+.navbar {
+    background-color: #585858;
+}
+p.navbar-title {
+    color: #F1F1F1;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    margin-left: 18px;
+    margin-top: 28px;
+    margin-bottom: 25px;
 }
 
 .avg-rating-label {
