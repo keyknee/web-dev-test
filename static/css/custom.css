@@ -3,18 +3,44 @@
     margin-top: 23px;
     margin-bottom: 22px;
 }
+
+body {
+    background-color: #DDDDDD;
+}
 .item-list {
     padding: 20px;
     background-color: #DDDDDD;
 }
 
-.items {
-    width: 18em;
-    margin: 5px;
+.item {
+    background-color: #F1F1F1;
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    height: 260px;
+    width: 162px;
+    margin:16px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.item-container {
+    padding-left: 25px;
+}
+
+.item-description {
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.item-image {
+    width: 130px;
+    height: auto;
 }
 
 .navbar {
     background-color: #585858;
+    margin-bottom: 38px;
 }
 p.navbar-title {
     color: #F1F1F1;
@@ -26,6 +52,7 @@ p.navbar-title {
 }
 
 .avg-rating-label {
+    color:#9B9B9B;
     font-size:85%;
     margin-top: 20px;
     margin-bottom: 0px;

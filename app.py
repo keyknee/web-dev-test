@@ -1,9 +1,11 @@
-from flask import Flask, render_template, request, url_for
+from flask import Flask, render_template, url_for
 from data import logic
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '2e85f9a9123bfd19a26869d910e61277be99f119f09f6c81'
-
+ 
+def item_pages():
+    for item in logic.items:
+        new_route = item.title
 
 @app.route('/')
 def home():
@@ -16,6 +18,10 @@ def home():
         setActiveUser=logic.User.setActiveUser
     )
 
+@app.route('/<item_name>')
+def item(item_name):
+    return render_template('item.html'
+    )
 
 if __name__ == '__main__':
     app.run(debug=True)

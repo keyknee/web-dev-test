@@ -59,11 +59,11 @@ class User:
 def demoUserActions(username): #function to create items for demo of site
     demoUser = User(username) #create the user
     demoUser.setActiveUser #make our user the active user
-    image_path = './/static//jpg//'
+    image_path = './/static//jpg/'
     placeholder_imgs = listdir(image_path)
 
     for i in range(0,randint(2,8)):
-        item = Item(username,'Dummy item {}'.format(i+1),'Item created by demoUserActions() function')
+        item = Item(username,'dummy-item-{}'.format(i+1),'Item created by demoUserActions() function')
         item.avg_rating = randrange(1,5)
         item.image_src = image_path + choice(placeholder_imgs)
     

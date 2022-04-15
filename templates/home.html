@@ -6,52 +6,30 @@
 {% block body %}
 
 <nav class="navbar">
-  <div class="container-fluid">
-    <p class='navbar-title'>Rate Me </p>
-    <div class="dropdown">
-      <a class="account-icon dropdown-toggle" role="button" id="userDropDown" data-bs-toggle="dropdown" aria-expanded="false">
+    <p class="navbar-title">Rate Me</p>
+    <a class="account-icon" role="button" id="userDropDown">
         <img src="{{url_for('static', filename='png/account-icon.png') }}">
-      </a>
-      <!-- <button class="btn btn-secondary dropdown-toggle" type="button" id="userDropDown" data-bs-toggle="dropdown" aria-expanded="false">
-        <img src="{{url_for('static', filename='png/account-icon.png') }}">
-      </button>-->
-      <ul class="dropdown-menu" aria-labelledby="userDropDown">
-        {% for user in users %}
-        <!-- href here should trigger a function to change the active user-->
-        <li><a class="dropdown-item" href="">{{ user.display_name }}</a></li>
-        {% endfor %}
-      </ul> 
-      <!--form of some sort to create new user: text field and button that executes init on User class -->
-      <!-- <a class="btn btn-dark" data-bs-toggle="collapse" href="#createUserCollapse" role="button">Create New User</a>
-      <div class="collapse" id="createUserCollapse">
-        <div class="card card-body">
-          <form>
-            <p><label for="username">username:</label><input type="text" id="username" name="username"><button class="btn-dark" type="button" onclick="createUser()"><img src="{{url_for('static', filename='png/arrow-icon.png')}}"></button></p>
-          </form>
-        </div>
-      </div> -->
-    </div>  
-  </div>
+    </a>
 </nav>
-<div class="item-list">
-  <div class="row row-cols-2">
+<div class="container item-container">
     {% for item in items %}
-    <div class="card items">
-      <img src="{{item.image_src}}" class="card-img-top" alt="randomly selected image">
-      <div class="card-body">
-        <h5 class="card-title">{{item.title}}</h5>
-        <p class="card-text">{{item.description}}</p>
-        <p class="avg-rating-label">Average Rating</p>
-        {% for x in range(0,item.avg_rating) %}
-        <img src="{{url_for('static', filename='png/star-fill-small-icon.png') }}" class="rating-star" id="rating-star-{{ x }}">
-        {% endfor %}
-        {% for x in range(0,5-item.avg_rating) %}
-        <img src="{{url_for('static', filename='png/star-empty-small-icon.png') }}" class="rating-star" id="rating-star-{{ x }}">
-        {% endfor %}
-      </div>
+    <div class="item col-xs-2">
+        <div class="item-details-container">
+            <a href="{{url_for('item',item_name=item.title)}}"><img src="{{item.image_src}}" class="item-image" alt="randomly selected image"></a>
+            <!-- <h5>{{item.title}}</h5> -->
+            <p class="item-description">{{item.description}}</p>
+            <p class="avg-rating-label">Average Rating</p>
+            {% for x in range(0,item.avg_rating) %}
+            <img src="{{url_for('static', filename='png/star-fill-small-icon.png') }}" class="rating-star" id="rating-star-{{ x }}">
+            {% endfor %}
+            {% for x in range(0,5-item.avg_rating) %}
+            <img src="{{url_for('static', filename='png/star-empty-small-icon.png') }}" class="rating-star" id="rating-star-{{ x }}">
+            {% endfor %}
+        </div>  
     </div>
-    {% endfor %}  
-  </div>
-  <!-- <button type="button" onclick="">Create New Item</button> -->
+    {% endfor %}
 </div>
+
+
+
 {% endblock %}
