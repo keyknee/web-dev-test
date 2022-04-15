@@ -5,29 +5,25 @@
 
 {% block body %}
 
-<nav class="navbar">
-    <p class="navbar-title">Rate Me</p>
-    <a class="account-icon" role="button" id="userDropDown">
-        <img src="{{url_for('static', filename='png/account-icon.png') }}">
-    </a>
-</nav>
-<div class="container item-container">
-    {% for item in items %}
-    <div class="item col-xs-2">
-        <div class="item-details-container">
-            <a href="{{url_for('item',item_name=item.title)}}"><img src="{{item.image_src}}" class="item-image" alt="randomly selected image"></a>
-            <!-- <h5>{{item.title}}</h5> -->
-            <p class="item-description">{{item.description}}</p>
-            <p class="avg-rating-label">Average Rating</p>
-            {% for x in range(0,item.avg_rating) %}
-            <img src="{{url_for('static', filename='png/star-fill-small-icon.png') }}" class="rating-star" id="rating-star-{{ x }}">
-            {% endfor %}
-            {% for x in range(0,5-item.avg_rating) %}
-            <img src="{{url_for('static', filename='png/star-empty-small-icon.png') }}" class="rating-star" id="rating-star-{{ x }}">
-            {% endfor %}
-        </div>  
+
+<div class="item-container">
+    <div class="col-xs-2 col-lg-3">
+      {% for item in items %}
+      <div class="card items">
+        <a href="{{url_for('item',item_name=item.title)}}"><img src="{{item.image_src}}" class="card-img-top item-image" alt="randomly selected image"></a>
+        <div class="card-body">
+          <p class="card-text item-description">{{item.description}}</p>
+          <p class="avg-rating-label">Average Rating</p>
+          {% for x in range(0,item.avg_rating) %}
+          <img src="{{url_for('static', filename='png/star-fill-small-icon.png') }}" class="rating-star" id="rating-star-{{ x }}">
+          {% endfor %}
+          {% for x in range(0,5-item.avg_rating) %}
+          <img src="{{url_for('static', filename='png/star-empty-small-icon.png') }}" class="rating-star" id="rating-star-{{ x }}">
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}  
     </div>
-    {% endfor %}
 </div>
 
 
