@@ -4,9 +4,26 @@
 {% endblock %}
 
 {% block body %}
+<div class="item-list">
+    <div class="row row-cols-2">
+      {% for item in items %}
+      <div class="card items">
+        <img src="{{item.image_src}}" class="card-img-top" alt="randomly selected image">
+        <div class="card-body">
+          <p class="card-text">{{item.description}}</p>
+          <p class="avg-rating-label">Average Rating</p>
+          {% for x in range(0,item.avg_rating) %}
+          <img src="{{url_for('static', filename='png/star-fill-small-icon.png') }}" class="rating-star" id="rating-star-{{ x }}">
+          {% endfor %}
+          {% for x in range(0,5-item.avg_rating) %}
+          <img src="{{url_for('static', filename='png/star-empty-small-icon.png') }}" class="rating-star" id="rating-star-{{ x }}">
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}  
+    </div>
 
-
-<div class="item-container">
+<!--<div class="item-container">
     <div class="col-xs-2 col-lg-3">
       {% for item in items %}
       <div class="card items">
@@ -24,8 +41,7 @@
       </div>
       {% endfor %}  
     </div>
-</div>
-
+</div>-->
 
 
 {% endblock %}
