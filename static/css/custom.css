@@ -40,7 +40,6 @@ body {
 
 .navbar {
     background-color: #585858;
-    margin-bottom: 38px;
 }
 .navbar-title {
     color: #F1F1F1;
@@ -49,6 +48,7 @@ body {
     margin-left: 18px;
     margin-top: 28px;
     margin-bottom: 25px;
+    text-decoration: none;
 }
 
 .avg-rating-label {
@@ -61,4 +61,16 @@ body {
 img.card-img-top {
     height: 160px;
     width: 160px;
+}
+
+.user-menu #user-menu {
+    background-color: #F1F1F1;
+    margin-bottom: 38px;
+    color: #000000;
+    font-size: 18pt;
+}
+
+.user-menu p {
+    font-size: 18pt;
+    font-family: 'Roboto', sans-serif;
 }
