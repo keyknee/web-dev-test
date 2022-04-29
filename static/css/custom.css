@@ -1,53 +1,24 @@
-.account-icon {
-    margin-right: 30px;
-    margin-top: 23px;
-    margin-bottom: 22px;
+#user-dropdown-button {
+    height: 30px;
+    width: 30px;
+    background: url(/static/png/account-icon.png);
+    border: none;
+    align-self: center;
 }
 
 body {
     background-color: #DDDDDD;
-}
-.item-list {
-    padding: 20px;
-    background-color: #DDDDDD;
-}
-
-.item {
-    background-color: #F1F1F1;
-    display: inline-block;
-    font-family: 'Montserrat', sans-serif;
-    height: 260px;
-    width: 162px;
-    margin:16px;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.item-container {
-    padding-left: 25px;
-}
-
-.item-description {
-    font-size: 12px;
-    font-weight: bold;
-    margin-top: 20px;
-}
-
-.item-image {
-    width: 130px;
-    height: auto;
+    font-family: 'Roboto', sans-serif
 }
 
 .navbar {
     background-color: #585858;
 }
-.navbar-title {
+.navbar-brand {
+    align-self: center;
     color: #F1F1F1;
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
-    margin-left: 18px;
-    margin-top: 28px;
-    margin-bottom: 25px;
     text-decoration: none;
 }
 
@@ -61,16 +32,58 @@ body {
 img.card-img-top {
     height: 160px;
     width: 160px;
+    align-self: center;
 }
 
-.user-menu #user-menu {
+.item-card {
+    border-radius: 10px;
     background-color: #F1F1F1;
+    padding: 20px 12px;
+    width: 192px;
+}
+
+.item-description {
+    font-size: 12px;
+}
+.user-menu {
+    display: none;
+}
+
+#user-menu {
+    background-color: #F1F1F1;
+    box-shadow: 0pt 3pt 6pt #00000029;
     margin-bottom: 38px;
     color: #000000;
+    font-family: 'Roboto', sans-serif;
+    padding: 34px 18px;
+}
+
+#user-menu > p {
     font-size: 18pt;
 }
 
-.user-menu p {
-    font-size: 18pt;
-    font-family: 'Roboto', sans-serif;
+#user-list > li {
+    color: #585858;
+    border-bottom: 1px #DDDDDD;
+    
+}
+
+div.usr-creation-form {
+    height: 50px;
+    display: inline-block;
+}
+input#username {
+    height: 50px;
+    vertical-align: bottom;
+}
+
+#usr-creation-btn {
+    height: 50px;
+    width: 50px;
+    background: #585858 url('/static/png/arrow-icon.png') no-repeat center;
+    vertical-align: bottom;
+}
+
+.itm-container {
+    z-index: -1;
 }

@@ -4,44 +4,22 @@
 {% endblock %}
 
 {% block body %}
-<!-- <div class="item-list">
-  {% for item in items %}
-  <div class="col-sm-2">
-    <div class="card items">
-      <img src="{{item.image_src}}" class="card-img-top" alt="randomly selected image">
-      <div class="card-body">
-        <p class="card-text">{{item.description}}</p>
-        <p class="avg-rating-label">Average Rating</p>
-        {% for x in range(0,item.avg_rating) %}
-        <img src="{{url_for('static', filename='png/star-fill-small-icon.png') }}" class="rating-star" id="rating-star-{{ x }}">
-        {% endfor %}
-        {% for x in range(0,5-item.avg_rating) %}
-        <img src="{{url_for('static', filename='png/star-empty-small-icon.png') }}" class="rating-star" id="rating-star-{{ x }}">
-        {% endfor %}
-      </div>
-      {% endfor %}  
-    </div>
-  </div>
-</div> -->
-<div class="container">
-    <div class="col-xs-2 col-lg-3">
-      {% for item in items %}
-      <div class="card items">
-        <a href="{{url_for('item',item_name=item.title)}}"><img src="{{item.image_src}}" class="card-img-top item-image" alt="randomly selected image"></a>
+<div class="container itm-container">
+    {% for item in items %}
+    <div class="card item-card">
+        <a href="{{url_for('item',item_name=item.title)}}"><img class="placeholder card-img-top"></a>
         <div class="card-body">
-          <p class="card-text item-description">{{item.description}}</p>
-          <p class="avg-rating-label">Average Rating</p>
-          {% for x in range(0,item.avg_rating) %}
-          <img src="{{url_for('static', filename='png/star-fill-small-icon.png') }}" class="rating-star" id="rating-star-{{ x }}">
-          {% endfor %}
-          {% for x in range(0,5-item.avg_rating) %}
-          <img src="{{url_for('static', filename='png/star-empty-small-icon.png') }}" class="rating-star" id="rating-star-{{ x }}">
-          {% endfor %}
+            <p class="card-text item-description">{{item.description}}</p>
+            <p class="avg-rating-label">Average Rating</p>
+            {% for x in range(0,item.avg_rating) %}
+            <img src="{{url_for('static', filename='png/star-fill-small-icon.png') }}" class="rating-star" id="rating-star-{{ x }}">
+            {% endfor %}
+            {% for x in range(0,5-item.avg_rating) %}
+            <img src="{{url_for('static', filename='png/star-empty-small-icon.png') }}" class="rating-star" id="rating-star-{{ x }}">
+            {% endfor %}
         </div>
-      </div>
-      {% endfor %}  
     </div>
+    {% endfor %}
 </div>
-
 
 {% endblock %}
