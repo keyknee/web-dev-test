@@ -20,7 +20,9 @@ def home():
 
 @app.route('/<item_name>')
 def item(item_name):
-    return render_template('item.html'
+    return render_template('item.html',
+        users=logic.users,
+        items=[x for x in logic.items if x.title == item_name]
     )
 
 if __name__ == '__main__':

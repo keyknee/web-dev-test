@@ -3,18 +3,25 @@
 {% block head %}
 {% endblock %}
 
-<div class="" id="itm-review-summary">
-    <img class="placeholder" />
-    <p></p>
-</div>
-<div>
 
-</div>
-<div>
-
-</div>
-<div>
-
-</div>
 {% block body %}
+<div class="container">
+    {% for item in items %}
+    <div class="card item-card" id="itm-review-summary">
+        <div class="card-body">
+            <p class="card-text item-description">{{item.description}}</p>
+            <p class="avg-rating-label">Average Rating</p>
+            {% for x in range(0,item.avg_rating) %}
+            <img src="{{url_for('static', filename='png/star-fill-icon.png') }}" class="rating-star" id="rating-star-{{ x }}">
+            {% endfor %}
+            {% for x in range(0,5-item.avg_rating) %}
+            <img src="{{url_for('static', filename='png/star-empty-icon.png') }}" class="rating-star" id="rating-star-{{ x }}">
+            {% endfor %}
+        </div>
+    </div>
+    <button class="itm-review-btn" id="write-review"><p>+ Write Review</p></button>
+    <button class="itm-review-btn" id="see-reviews"><p>See Reviews</p></button>
+
+    {% endfor %}
+</div>
 {% endblock %}
